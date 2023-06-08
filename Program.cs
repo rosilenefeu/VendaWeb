@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using VendaWebMvc.Models;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<VendaWebMvcContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("VendaWebMvcContext") ?? throw new InvalidOperationException("Connection string 'VendaWebMvcContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
