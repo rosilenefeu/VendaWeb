@@ -1,4 +1,4 @@
-namespace VendaWebMvc.Models
+namespace VendaWebMvc.Models.ViewModels
 {
     public class ErrorViewModel
     {
